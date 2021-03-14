@@ -2,14 +2,17 @@
 @file_name:
 @user:christineHu
 """
+
+
 def lines(file):
     """
         作用：实现在文件末尾增加一个换行
     :param file:
     :return:
     """
-    for line in file:yield line
+    for line in file: yield line
     yield '\n'
+
 
 def blocks(file):
     """

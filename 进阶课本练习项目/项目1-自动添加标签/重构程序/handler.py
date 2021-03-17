@@ -19,10 +19,10 @@ class Handler:
 			return method(*args)
 
 	def start(self, name):
-		self.callback('start_' + name)
+		self.callback('start_', name)
 
 	def end(self, name):
-		self.callback('end_' + name)
+		self.callback('end_', name)
 
 	def sub(self, name):
 		def substitution(match):

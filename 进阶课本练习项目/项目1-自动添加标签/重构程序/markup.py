@@ -33,11 +33,13 @@ class Parser:
 	def parse(self, file):
 		self.handler.start('document')
 		for block in blocks(file):
-			block = filter(block, self.handler)
-			for rule in self.rules:
-				last = rule.action(block, self.handler)
-				if last:
-					break
+			for filter in self.filters:
+				block = filter(block, self.handler)
+				for rule in self.rules:
+					if rule.condition(block):
+						last = rule.action(block, self.handler)
+						if last:
+							break
 		self.handler.end('document')
 
 

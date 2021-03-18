@@ -10,6 +10,7 @@ class Rule:
 		所有规则的基类
 	"""
 
+
 	def action(self, block, handler):
 		handler.start(self.type)
 		handler.feed(block)

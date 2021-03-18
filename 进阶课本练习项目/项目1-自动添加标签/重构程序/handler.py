@@ -42,7 +42,7 @@ class HTMLRenderer(Handler):
 	"""
 
 	def start_document(self):
-		print('<html><head><title>...</title></head><body')
+		print('<html><head><title>...</title></head><body>')
 
 	def end_document(self):
 		print('</body></html>')

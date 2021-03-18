@@ -16,8 +16,8 @@ class Parser:
 		Parser读取文本文件，应用规则并控制处理程序
 	"""
 
-	def __init__(self, handler):
-		self.handler = handler
+	def __init__(self, handler_temp):
+		self.handler = handler_temp
 		self.rules = []
 		self.filters = []
 
@@ -25,8 +25,8 @@ class Parser:
 		self.rules.append(rule)
 
 	def addFilter(self, pattern, name):
-		def filter(block, handler):
-			return re.sub(pattern, handler.sub(name), block)
+		def filter(block, handler_temp):
+			return re.sub(pattern, handler_temp.sub(name), block)
 
 		self.filters.append(filter)
 
@@ -48,8 +48,8 @@ class BasicTextParser(Parser):
 		在构造函数中添加规则和过滤器的Parser子类
 	"""
 
-	def __init__(self, handler):
-		Parser.__init__(self, handler)
+	def __init__(self, handler_temp):
+		Parser.__init__(self, handler_temp)
 		self.addRule(ListRule())
 		self.addRule(ListItemRule())
 		self.addRule(TitleRule())

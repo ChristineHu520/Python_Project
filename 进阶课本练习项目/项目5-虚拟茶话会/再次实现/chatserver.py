@@ -12,7 +12,8 @@ PORT = 5005
 NAME = 'TestChat'
 
 
-class EndSession(Exception): pass
+class EndSession(Exception):
+	pass
 
 
 class CommandHandle:

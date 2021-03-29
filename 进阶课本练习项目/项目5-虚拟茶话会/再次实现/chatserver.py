@@ -154,7 +154,7 @@ class LogoutRoom(Room):
 			pass
 
 
-class ChatSession(asynchat.async_chat):
+class ChatSession(async_chat):
 	"""
 	单个会话，负责与单个用户通信
 	"""
@@ -217,4 +217,5 @@ if __name__ == '__main__':
 	s = ChatServer(PORT, NAME)
 	try:
 		asyncore.loop()
-	except KeyboardInterrupt: print()
+	except KeyboardInterrupt:
+		print()

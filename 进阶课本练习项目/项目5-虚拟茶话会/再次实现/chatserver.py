@@ -21,14 +21,14 @@ class CommandHandle:
 	类似于标准库中的cmd.Cmd的简单命令处理程序
 	"""
 
-	def unknow(self, session, cmd):
+	def unknown(self, session, cmd):
 		"""
 		响应未知命令
 		:param session:
 		:param cmd:
 		:return:
 		"""
-		session.push('Unknow command: {}s\r\n'.format(cmd))
+		session.push('Unknown command: {}s\r\n'.format(cmd))
 
 	def handle(self, session, line):
 		"""
@@ -53,7 +53,7 @@ class CommandHandle:
 			meth(session, line)
 		except TypeError:
 			# 如果是不可调用的，就响应未知命令
-			self.unknow(session, cmd)
+			self.unknown(session, cmd)
 
 
 class Room(CommandHandle):
@@ -93,7 +93,7 @@ class LoginRoom(Room):
 		# 用户进入聊天室的时候发出问候
 		self.broadcast('Welcome to {}\r\n'.format(self.server.name))
 
-	def unknow(self, session, cmd):
+	def unknown(self, session, cmd):
 		# 除了login和logout之外的命令都会导致系统显示提示消息
 		session.push('Please log in\nuse "login <nick>"\r\n')
 

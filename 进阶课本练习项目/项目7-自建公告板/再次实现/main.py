@@ -11,7 +11,7 @@ import cgitb;
 cgitb.enable()
 import sqlite3
 
-conn = sqlite3.connect('message.db')
+conn = sqlite3.connect('messages.db')
 curs = conn.cursor()
 
 print("""
@@ -23,7 +23,7 @@ print("""
 		<h1>The FooBar Bulletin Board</h1>
 """)
 
-curs.execute('select * from messages;')
+curs.execute('select * from messages')
 names = [d[0] for d in curs.description]
 rows = [dict(zip(names, row)) for row in curs.fetchall()]
 

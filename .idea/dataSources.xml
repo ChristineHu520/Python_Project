@@ -13,5 +13,17 @@
         </library>
       </libraries>
     </data-source>
+    <data-source source="LOCAL" name="messages" uuid="c47f3e50-94bf-415a-86c4-7ec0780c14a2">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:E:\Users\husj27225\Python_Project\进阶课本练习项目\项目7-自建公告板\再次实现\messages.db</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+      <libraries>
+        <library>
+          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.34.0/sqlite-jdbc-3.34.0.jar</url>
+        </library>
+      </libraries>
+    </data-source>
   </component>
 </project>

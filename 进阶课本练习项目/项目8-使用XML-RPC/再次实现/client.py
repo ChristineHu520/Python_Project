@@ -3,7 +3,7 @@
 # @Time    : 2021/4/1 9:07
 # @Author  : ChristineHu
 """
-
+from os import path
 import sys
 from cmd import Cmd
 from random import choice
@@ -54,6 +54,8 @@ class Client(Cmd):
 		# 让服务器先行一步
 		sleep(HEAD_START)
 		self.server = ServerProxy(url)
+		urlfile = path.join(dirname, urlfile)
+		print(urlfile)
 		for line in open(urlfile):
 			line = line.strip()
 			self.server.hello(line)
@@ -78,6 +80,7 @@ class Client(Cmd):
 
 
 def main():
+	print(sys.argv[1:])
 	urlfile, directory, url = sys.argv[1:]
 	client = Client(url, directory, urlfile)
 	client.cmdloop()

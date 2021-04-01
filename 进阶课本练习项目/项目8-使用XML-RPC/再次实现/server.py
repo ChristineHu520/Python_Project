@@ -103,7 +103,7 @@ class Node:
 		if secret != self.secret:
 			raise ACCESS_DENIED
 		result = self.query(query)
-		f = open(join(self.dirname, query), ' w')
+		f = open(join(self.dirname, query), 'w')
 		f.write(result)
 		f.close()
 		return 0

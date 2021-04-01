@@ -127,10 +127,24 @@ def main():
 	n._start()
 
 
+def main1():
+	url = 'http://127.0.0.1:6666'
+	directory = 'files1'
+	secret = '123456'
+	node = Node(url, directory, secret)
+	node._start()
+
+
 if __name__ == '__main__':
-	main()
+	main1()
 
 # from xmlrpc.client import *
 # mpeer = ServerProxy('http://localhost:4242')
 # code, data = mpeer.query('test.txt')
+# code
+# python simple_node.py http://localhost:4242 files1 secret
+# python simple_node.py http://localhost:4243 files2 secret2
+
+# otherpeer = ServerProxy('http://localhost:4243')
+# code, data = otherpeer.query('test.txt')
 # code

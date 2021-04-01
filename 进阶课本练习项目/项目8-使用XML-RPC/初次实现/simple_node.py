@@ -44,8 +44,10 @@ class Node:
 		"""
 		code, data = self._handle(query)
 		if code == OK:
+			print('Query 函数的OK ')
 			return code, data
 		else:
+			print('Query 函数的Fail ')
 			history = history + [self.url]
 			if len(history) >= MAX_HISTORY_LENGTH:
 				return FAIL, EMPTY

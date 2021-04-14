@@ -1,2 +1,0 @@
-Date	Sunspot Number Predicted	Sunspot Number High	Sunspot Number Low	10.7 cm Radio Flux Predicted	10.7 cm Radio Flux High	10.7 cm Radio Flux Low
-2020-09	10	11	9	74.5	75.5	73.5
